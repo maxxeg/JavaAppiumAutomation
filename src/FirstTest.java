@@ -110,6 +110,21 @@ public class FirstTest
             5
     );
 
+    // проверяем наличие текста “Search…” в строке поиска
+    WebElement search_placeholder = waitForElementPresent(
+            By.id("org.wikipedia:id/search_src_text"),
+            "Cannot find search placeholder",
+            5
+    );
+
+    String placeholder = search_placeholder.getAttribute("text");
+
+    Assert.assertEquals(
+            "Not present search placeholder",
+            "Search…",
+            placeholder
+    );
+
     // вводим Java в поле поиска
     waitForElementAndSendKeys(
             By.id("org.wikipedia:id/search_src_text"),
