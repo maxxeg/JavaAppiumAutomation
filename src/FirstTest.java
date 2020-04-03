@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest
 {
@@ -22,7 +23,7 @@ public class FirstTest
 
     capabilities.setCapability("platformName", "Android");
     capabilities.setCapability("deviceName", "AndroidTestDevice");
-    capabilities.setCapability("platformVersion", "9");
+    capabilities.setCapability("platformVersion", "8");
     capabilities.setCapability("automationName", "Appium");
     capabilities.setCapability("appPackage", "org.wikipedia");
     capabilities.setCapability("appActivity", ".main.MainActivity");
@@ -157,6 +158,50 @@ public class FirstTest
 
   }
 
+  @Test
+  public void testSearchHomework() throws InterruptedException {
+
+    // ищем поле поле поиска и кликаем
+    waitForElementAndClick(
+            By.id("org.wikipedia:id/search_container"),
+            "Cannot find 'Search Wikipedia' input",
+            2
+    );
+
+    // вводим что-то в поле поиска
+    waitForElementAndSendKeys(
+            By.id("org.wikipedia:id/search_src_text"),
+            "Earth",
+            "Cannot find search input",
+            2
+    );
+
+    // Ищем вхождения в заголовках результатов поиска
+    Thread.sleep(2000);
+    String xpath_search = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title'][contains(@text,'Earth')]";
+    List<WebElement> articles_title = searchArticles(By.xpath(xpath_search));
+
+
+      Assert.assertTrue(
+              "No any articles title with search word",
+              articles_title.size() > 1
+      );
+
+      // Отменяем поиск
+      waitForElementAndClick(
+            By.id("org.wikipedia:id/search_close_btn"),
+            "Cannot find search close button",
+            5
+    );
+
+    // Проверяем что нет результатов поиска
+    WebElement title_element = waitForElementPresent(
+            By.id("org.wikipedia:id/search_empty_message"),
+            "Cannot find search_empty_message",
+            5
+    );
+
+  }
 
 
   private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -201,6 +246,12 @@ public class FirstTest
     WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
     element.clear();
     return element;
+  }
+
+  private List<WebElement> searchArticles(By by)
+  {
+    List<WebElement> articles_title = driver.findElements(by);
+    return articles_title;
   }
 
 }
