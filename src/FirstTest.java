@@ -181,7 +181,6 @@ public class FirstTest
     String xpath_search = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title'][contains(@text,'Earth')]";
     List<WebElement> articles_title = searchArticles(By.xpath(xpath_search));
 
-
       Assert.assertTrue(
               "No any articles title with search word",
               articles_title.size() > 1
@@ -199,6 +198,43 @@ public class FirstTest
             By.id("org.wikipedia:id/search_empty_message"),
             "Cannot find search_empty_message",
             5
+    );
+
+  }
+
+  @Test
+  public void testSearchHomeworkEx4() throws InterruptedException
+  {
+    // ищем поле поле поиска и кликаем
+    waitForElementAndClick(
+            By.id("org.wikipedia:id/search_container"),
+            "Cannot find 'Search Wikipedia' input",
+            2
+    );
+
+    // вводим что-то в поле поиска
+    waitForElementAndSendKeys(
+            By.id("org.wikipedia:id/search_src_text"),
+            "Earth",
+            "Cannot find search input",
+            2
+    );
+
+    // Считаем количество заголовоков статей в результататх поиска, поместившихся в видимой области экрана
+    Thread.sleep(2000);
+    String xpath_search = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title']";
+    List<WebElement> articles_title = searchArticles(By.xpath(xpath_search));
+
+    // Ищем вхождения в заголовках результатов поиска
+    int titles_num_fact = 0;
+    for (WebElement title : articles_title)
+    {
+      if (title.getText().matches("(.*)Earth(.*)")) titles_num_fact++;
+    }
+
+    Assert.assertTrue(
+            "Some articles title not included search word",
+            articles_title.size() == titles_num_fact
     );
 
   }
