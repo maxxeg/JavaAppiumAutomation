@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="afc2dc4a-77fa-474c-bdaa-9fbba33d7567" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/HomeWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/HomeWork.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomeWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,22 +36,12 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="xpath.settings" />
   </component>
-  <component name="RunManager" selected="JUnit.HomeWork">
+  <component name="RunManager" selected="JUnit.HomeWork.testAssertTitle_Ex6">
     <configuration name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
       <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirstTest.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,13 +76,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HomeWork.testAssertTitle_Ex6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomeWork" />
+      <option name="METHOD_NAME" value="testAssertTitle_Ex6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HomeWork.testAssertTitle_Ex6" />
         <item itemvalue="JUnit.HomeWork" />
         <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
         <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
         <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
-        <item itemvalue="JUnit.FirstTest.testAmountOfNotEmptySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -180,22 +181,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="259" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1585828826968" />
-    <state width="1920" height="282" key="GridCell.Tab.0.bottom" timestamp="1586697605243">
+    <state width="1920" height="282" key="GridCell.Tab.0.bottom" timestamp="1586701167345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586697605243" />
-    <state width="1920" height="282" key="GridCell.Tab.0.center" timestamp="1586697605243">
+    <state width="1920" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586701167345" />
+    <state width="1920" height="282" key="GridCell.Tab.0.center" timestamp="1586701167345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586697605243" />
-    <state width="1920" height="282" key="GridCell.Tab.0.left" timestamp="1586697605243">
+    <state width="1920" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586701167345" />
+    <state width="1920" height="282" key="GridCell.Tab.0.left" timestamp="1586701167345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586697605243" />
-    <state width="1920" height="282" key="GridCell.Tab.0.right" timestamp="1586697605243">
+    <state width="1920" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586701167345" />
+    <state width="1920" height="282" key="GridCell.Tab.0.right" timestamp="1586701167345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1920" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586697605243" />
+    <state width="1920" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586701167345" />
     <state x="440" y="93" width="1268" height="853" key="SettingsEditor" timestamp="1585830192678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

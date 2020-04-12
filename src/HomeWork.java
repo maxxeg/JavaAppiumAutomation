@@ -42,14 +42,16 @@ public class HomeWork
     driver.quit();
   }
 
-  String search_word = "Languages of";
-  String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title']";
-  String name_of_folder = "My list";
-  String article_in_list_title_locator ="org.wikipedia:id/page_list_item_title";
+
 
   @Test
   public void testSave2ArticlesToList_Ex5() throws InterruptedException
   {
+
+    String search_word = "Languages of";
+    String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title']";
+    String name_of_folder = "My list";
+    String article_in_list_title_locator ="org.wikipedia:id/page_list_item_title";
 
     // в цикле пишем в список 2-е статьи
     for (int i = 0; i <= 1; i++)
@@ -229,6 +231,44 @@ public class HomeWork
 
   }
 
+  @Test
+  public void testAssertTitle_Ex6() throws InterruptedException {
+
+    String search_word = "Languages of";
+    String article_title = "Languages of India";
+    String title_locator = "//*[@resource-id='org.wikipedia:id/view_page_title_text'][@text='" + article_title + "']";
+    //*[@resource-id='org.wikipedia:id/item_title'][@text='" + name_of_folder + "']
+
+    // ищем поле поле поиска и кликаем
+    waitForElementAndClick(
+            By.id("org.wikipedia:id/search_container"),
+            "Cannot find 'Search Wikipedia' input",
+            5
+    );
+
+    // вводим поисковый запрос
+    waitForElementAndSendKeys(
+            By.id("org.wikipedia:id/search_src_text"),
+            search_word,
+            "Cannot find search input",
+            5
+    );
+
+    // переходим на статью
+    waitForElementAndClick(
+            By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[contains(@text,'" + article_title +"')]"),
+            "Cannot go to article '" + article_title +"'",
+            5
+    );
+
+    // проверяем есть ли элемент на странице
+    assertElementPresent(
+            By.xpath(title_locator),
+            "We've not found title " + article_title
+    );
+
+  }
+
   private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
   {
     WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -348,5 +388,14 @@ public class HomeWork
   {
     List<WebElement> elements = driver.findElements(by);
     return elements;
+  }
+
+  private void assertElementPresent(By by, String error_message)
+  {
+    int amountOfElements = getAmountOfElements(by);
+    if (amountOfElements == 0){
+      String default_message = "An element '" + by.toString() + "' supposed present";
+      throw new AssertionError(default_message + " " + error_message);
+    }
   }
 }
