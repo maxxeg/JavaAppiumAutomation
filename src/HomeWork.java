@@ -39,11 +39,12 @@ public class HomeWork
   @After
   public void tearDown()
   {
+    if (driver.getOrientation() == ScreenOrientation.LANDSCAPE) driver.rotate(ScreenOrientation.PORTRAIT);
+    //driver.resetApp();
     driver.quit();
   }
 
-
-
+  /*
   @Test
   public void testSave2ArticlesToList_Ex5() throws InterruptedException
   {
@@ -237,7 +238,6 @@ public class HomeWork
     String search_word = "Languages of";
     String article_title = "Languages of India";
     String title_locator = "//*[@resource-id='org.wikipedia:id/view_page_title_text'][@text='" + article_title + "']";
-    //*[@resource-id='org.wikipedia:id/item_title'][@text='" + name_of_folder + "']
 
     // ищем поле поле поиска и кликаем
     waitForElementAndClick(
@@ -265,6 +265,37 @@ public class HomeWork
     assertElementPresent(
             By.xpath(title_locator),
             "We've not found title " + article_title
+    );
+
+  }
+  */
+
+  @Test
+  public void testChangeScreenOrientation_Ex7() throws InterruptedException {
+
+    // попорачиваем в альбомную
+    driver.rotate(ScreenOrientation.LANDSCAPE);
+
+    Thread.sleep(1000);
+
+    // тест падает с ошибкой
+    Assert.assertFalse(
+            "Эмуляция ошибки для падения теста после поворота экрана устройства",
+            1 == 1
+    );
+
+  }
+
+  @Test
+  public void testOrientationAfterPreviousTest() throws InterruptedException
+  {
+
+    Thread.sleep(1000);
+
+    // проверяем ориентацию, если альбомная - тест падает
+    Assert.assertTrue(
+            "Ориентация экрана устройства Альбомная - ожидалось что ориентация будет сброшена к Портретной",
+            driver.getOrientation() == ScreenOrientation.PORTRAIT
     );
 
   }
