@@ -127,4 +127,17 @@ public class MainPageObject
     WebElement element = waitForElementPresent(by, error_message, tineoutInSeconds);
     return element.getAttribute(attribute);
   }
+
+  public List<WebElement> findElementsByLocator(By by) {
+    List<WebElement> elements = driver.findElements(by);
+    return elements;
+  }
+
+  public void assertElementPresent(By by, String error_message) {
+    int amountOfElements = getAmountOfElements(by);
+    if (amountOfElements == 0){
+      String default_message = "An element '" + by.toString() + "' supposed present";
+      throw new AssertionError(default_message + " " + error_message);
+    }
+  }
 }

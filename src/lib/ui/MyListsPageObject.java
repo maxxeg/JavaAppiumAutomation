@@ -1,12 +1,15 @@
 package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import java.util.List;
 
 public class MyListsPageObject extends MainPageObject
 {
   private static final String
           FOLDER_BY_NAME_TPL = "//*[@text='{FOLDER_NAME}']",
-          ARTICLE_BY_TITLE_TPL = "//*[@text='{TITLE}']";
+          ARTICLE_BY_TITLE_TPL = "//*[@text='{TITLE}']",
+          ARTICLE_IN_LIST_TITLE = "org.wikipedia:id/page_list_item_title";
 
   public MyListsPageObject(AppiumDriver driver) {
     super(driver);
@@ -27,7 +30,7 @@ public class MyListsPageObject extends MainPageObject
     this.waitForElementAndClick(
             By.xpath(folder_name_xpath),
             "Cannot find folder by name " + name_of_folder,
-            5);
+            15);
   }
 
   public void waitForArticleToAppearByTitle(String article_title) {
@@ -49,10 +52,24 @@ public class MyListsPageObject extends MainPageObject
   public void swipeByArticleToDelete(String article_title) {
     this.waitForArticleToAppearByTitle(article_title);
     String article_title_xpath = getSavedArticleXpathByTitle(article_title);
+    this.swipeElementToLeft(
+            By.xpath(article_title_xpath),
+            "Cannot find saved article by title " + article_title);
+    this.waitForArticleToDisappearByTitle(article_title);
+  }
+
+  public void waitForArticleByTitleAndClick(String article_title) {
+    String article_title_xpath = getSavedArticleXpathByTitle(article_title);
     this.waitForElementAndClick(
             By.xpath(article_title_xpath),
-            "Cannot find saved article by title " + article_title,
-            5);
-    this.waitForArticleToDisappearByTitle(article_title);
+            "Cannot find article in list folder " + article_title,
+            15);
+  }
+
+  public int amountOfAllArticlesTitleOnList() throws InterruptedException {
+    List<WebElement> articles_title = findElementsByLocator(
+            By.id(ARTICLE_IN_LIST_TITLE)
+    );
+    return articles_title.size();
   }
 }

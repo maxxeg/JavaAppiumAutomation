@@ -13,11 +13,18 @@ public class ArticlePageObject extends MainPageObject
           ADD_TO_MY_LIST_OVERLAY = "org.wikipedia:id/onboarding_button",
           MY_LIST_NAME_INPUT = "org.wikipedia:id/text_input",
           MY_LIST_OK_BUTTON = "//android.widget.Button[@text='OK']",
-          CLOSE_ARTICLE_BUTTON ="//android.widget.ImageButton[@content-desc='Navigate up']";
+          CLOSE_ARTICLE_BUTTON ="//android.widget.ImageButton[@content-desc='Navigate up']",
+          MY_LIST_EXISTING_FOLDER_TPL = "//*[@resource-id='org.wikipedia:id/item_title'][@text='{FOLDER}']";
 
   public ArticlePageObject(AppiumDriver driver) {
     super(driver);
   }
+
+  /* TEMPLATES METHODS */
+  private static String getFolderInListsElement(String name_of_folder) {
+    return MY_LIST_EXISTING_FOLDER_TPL.replace("{FOLDER}", name_of_folder);
+  }
+  /* TEMPLATES METHODS */
 
   public WebElement waitForTitleElement() {
     return this.waitForElementPresent(
@@ -71,10 +78,36 @@ public class ArticlePageObject extends MainPageObject
             5);
   }
 
+  public void addArticle2ToMyList(String name_of_folder) {
+    this.waitForElementAndClick(
+            By.xpath(OPTIONS_BUTTON),
+            "Cannot find button to open article options",
+            5);
+
+    this.waitForElementAndClick(
+            By.xpath(OPTIONS_ADD_TO_MY_LIST_BUTTON),
+            "Cannot find option to add article to reading list",
+            5);
+
+    String folder_in_lists = getFolderInListsElement(name_of_folder);
+    this.waitForElementAndClick(
+              By.xpath(folder_in_lists),
+              "Cannot find folder in lists",
+              5
+    );
+  }
+
   public void closeArticle() {
     this.waitForElementAndClick(
             By.xpath(CLOSE_ARTICLE_BUTTON),
             "Cannot find Close button om article page",
             5);
+  }
+
+  public void assertElementTitlePresent() {
+    this.assertElementPresent(
+            By.id(TITLE),
+            "We've not found title element"
+    );
   }
 }
