@@ -117,4 +117,25 @@ public class HomeWork extends CoreTestCase
     SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
     ArticlePageObject.assertElementTitlePresent();
   }
+
+  @Test
+  public void testTemplateRefactoring_Ex9() throws InterruptedException {
+    SearchPageObject = new SearchPageObject(driver);
+
+    String search_word = "Languages of";
+
+    SearchPageObject.initSearchInput(); // кликаем на строку поиска
+    SearchPageObject.typeSearchLine(search_word); // вводим поисковый запрос
+
+    String [][] titlesAndDescriptions = {
+            {"Languages of India", "Languages of a geographic region"},
+            {"Languages of the United States", "Languages of a geographic region"},
+            {"Languages of the Philippines", "Languages of a geographic region"}
+    };
+
+    // в цикле проверяем есть ли блок с таким названием и описанием, сравнивая со значениями из массива
+    for (int i = 0; i < 3; i ++) {
+      SearchPageObject.waitForElementByTitleAndDescription(titlesAndDescriptions[i][0], titlesAndDescriptions[i][1]);
+    }
+  }
 }

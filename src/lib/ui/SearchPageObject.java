@@ -14,15 +14,19 @@ public class SearchPageObject extends MainPageObject
           SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[contains(@text,'{SUBSTRING}')]",
           SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']",
           SEARCH_EMPTY_RESULT_ELEMENT ="//*[@resource-id='org.wikipedia:id/search_empty_view']/*[@text='No results found']",
-          SEARCH_RESULT_IN_TITLE_TPL = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title'][contains(@text,'{TITLE}')]",
-          SEARCH_RESULT_LOCATOR_IN_TITLE = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[@resource-id='org.wikipedia:id/page_list_item_title']";
-
+          SEARCH_RESULT_IN_TITLE_TPL = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget." +
+                  "TextView[@resource-id='org.wikipedia:id/page_list_item_title'][contains(@text,'{TITLE}')]",
+          SEARCH_RESULT_LOCATOR_IN_TITLE = "//*[@resource-id='org.wikipedia:id/search_results_list']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget." +
+                  "TextView[@resource-id='org.wikipedia:id/page_list_item_title']",
+          SEARCH_RESULT_IN_TITLE_AND_DESCRIPTION_TPL = "//*[@resource-id='org.wikipedia:id/page_list_item_container']/*[@class='android.widget.LinearLayout']" +
+                  "[*[@resource-id='org.wikipedia:id/page_list_item_title' and @text='{TITLE}'] and " +
+                  "*[@resource-id='org.wikipedia:id/page_list_item_description' and @text='{DESCRIPTION}']]";
 
   public SearchPageObject(AppiumDriver driver) {
     super(driver);
   }
 
-  /* TEMPLATES METHODS */
+  /* TEMPLATES METHODS - START */
   private static String getResultSearchElement(String substring) {
     return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
   }
@@ -30,7 +34,11 @@ public class SearchPageObject extends MainPageObject
   private static String getResultSearchElementInTitle(String substring) {
     return SEARCH_RESULT_IN_TITLE_TPL.replace("{TITLE}", substring);
   }
-  /* TEMPLATES METHODS */
+
+  private static String getResultSearchElementInTitleAndDescription(String title, String description) {
+    return SEARCH_RESULT_IN_TITLE_AND_DESCRIPTION_TPL.replace("{TITLE}", title).replace("{DESCRIPTION}", description);
+  }
+  /* TEMPLATES METHODS - END */
 
   public void initSearchInput() {
     this.waitForElementAndClick(
@@ -100,10 +108,14 @@ public class SearchPageObject extends MainPageObject
     return articles_title.size();
   }
 
-
-
-
-
+  public void waitForElementByTitleAndDescription(String title, String description) {
+    String search_result_xpath = getResultSearchElementInTitleAndDescription(title, description);
+    this.waitForElementPresent(
+            By.xpath(search_result_xpath),
+            "Cannot find search result by title '" + title + "' and description '" + description + "'",
+            10
+    );
+  }
 
   public void clickByArticleWithSubstring(String substring) {
     String search_result_xpath = getResultSearchElement(substring);
