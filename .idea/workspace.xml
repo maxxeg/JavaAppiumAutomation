@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afc2dc4a-77fa-474c-bdaa-9fbba33d7567" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_client_6_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_websocket_api_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/iOSTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/iOS/GetStartedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_client_4_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/selenium_server_standalone_3_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/selenium_server_standalone_3_14_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAppiumAutomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAppiumAutomation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/java-client-4.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/META-INF/JavaAppiumAutomation.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/tests/HomeWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/tests/HomeWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/HomeWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/HomeWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +44,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar!/" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3505747" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="xpath.settings" />
@@ -43,8 +58,42 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="tests" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lib.ui" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.HomeWork.testTemplateRefactoring_Ex9">
+  <component name="RunManager" selected="JUnit.GetStartedTest.testPassThroughWelcome">
+    <configuration name="GetStartedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.iOS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests.iOS" />
+      <option name="MAIN_CLASS_NAME" value="tests.iOS.GetStartedTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetStartedTest.testPassThroughWelcome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.iOS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests.iOS" />
+      <option name="MAIN_CLASS_NAME" value="tests.iOS.GetStartedTest" />
+      <option name="METHOD_NAME" value="testPassThroughWelcome" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HomeWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <extension name="coverage">
@@ -70,26 +119,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeWork.testCancelSearch_Ex3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HomeWork" />
-      <option name="METHOD_NAME" value="testCancelSearch_Ex3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomeWork.testSave2ArticlesToList_Ex5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.HomeWork" />
-      <option name="METHOD_NAME" value="testSave2ArticlesToList_Ex5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HomeWork.testTemplateRefactoring_Ex9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <extension name="coverage">
@@ -108,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GetStartedTest.testPassThroughWelcome" />
+        <item itemvalue="JUnit.GetStartedTest" />
         <item itemvalue="JUnit.HomeWork.testTemplateRefactoring_Ex9" />
         <item itemvalue="JUnit.HomeWork" />
         <item itemvalue="JUnit.HomeWork.testAssertTitle_Ex6" />
-        <item itemvalue="JUnit.HomeWork.testSave2ArticlesToList_Ex5" />
-        <item itemvalue="JUnit.HomeWork.testCancelSearch_Ex3" />
       </list>
     </recent_temporary>
   </component>
@@ -170,12 +199,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2 lesson" />
@@ -185,6 +215,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add HomeWork class" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="49" key="#Project_Structure" timestamp="1587723968128">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state x="240" y="49" key="#Project_Structure/0.23.1280.715@0.23.1280.715" timestamp="1587723968128" />
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586952047854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -213,26 +247,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="553" y="113" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1586671823120" />
+    <state x="478" y="106" key="DetectedRootsChooserDialog" timestamp="1587559300807">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="478" y="106" key="DetectedRootsChooserDialog/0.23.1280.721@0.23.1280.721" timestamp="1587559300807" />
     <state x="854" y="259" key="FileChooserDialogImpl" timestamp="1585828826968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="259" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1585828826968" />
-    <state width="1920" height="274" key="GridCell.Tab.0.bottom" timestamp="1587202222071">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1218" height="215" key="GridCell.Tab.0.bottom" timestamp="1587723718462">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
+    <state width="1238" height="225" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1587565249962" />
     <state width="1920" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1587202222071" />
-    <state width="1920" height="274" key="GridCell.Tab.0.center" timestamp="1587202222071">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1218" height="215" key="GridCell.Tab.0.bottom/0.23.1280.715@0.23.1280.715" timestamp="1587723718462" />
+    <state width="1218" height="215" key="GridCell.Tab.0.bottom/0.23.1280.716@0.23.1280.716" timestamp="1587720658399" />
+    <state width="1218" height="166" key="GridCell.Tab.0.bottom/0.23.1280.721@0.23.1280.721" timestamp="1587564139498" />
+    <state width="1218" height="225" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1587565486735" />
+    <state width="1218" height="215" key="GridCell.Tab.0.center" timestamp="1587723718461">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
+    <state width="1238" height="225" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1587565249957" />
     <state width="1920" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1587202222071" />
-    <state width="1920" height="274" key="GridCell.Tab.0.left" timestamp="1587202222071">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1218" height="215" key="GridCell.Tab.0.center/0.23.1280.715@0.23.1280.715" timestamp="1587723718461" />
+    <state width="1218" height="215" key="GridCell.Tab.0.center/0.23.1280.716@0.23.1280.716" timestamp="1587720658378" />
+    <state width="1218" height="166" key="GridCell.Tab.0.center/0.23.1280.721@0.23.1280.721" timestamp="1587564139497" />
+    <state width="1218" height="225" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1587565486734" />
+    <state width="1218" height="215" key="GridCell.Tab.0.left" timestamp="1587723718461">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
+    <state width="1238" height="225" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1587565249956" />
     <state width="1920" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1587202222071" />
-    <state width="1920" height="274" key="GridCell.Tab.0.right" timestamp="1587202222071">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1218" height="215" key="GridCell.Tab.0.left/0.23.1280.715@0.23.1280.715" timestamp="1587723718461" />
+    <state width="1218" height="215" key="GridCell.Tab.0.left/0.23.1280.716@0.23.1280.716" timestamp="1587720658377" />
+    <state width="1218" height="166" key="GridCell.Tab.0.left/0.23.1280.721@0.23.1280.721" timestamp="1587564139497" />
+    <state width="1218" height="225" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1587565486734" />
+    <state width="1218" height="215" key="GridCell.Tab.0.right" timestamp="1587723718462">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
+    <state width="1238" height="225" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1587565249958" />
     <state width="1920" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1587202222071" />
+    <state width="1218" height="215" key="GridCell.Tab.0.right/0.23.1280.715@0.23.1280.715" timestamp="1587723718462" />
+    <state width="1218" height="215" key="GridCell.Tab.0.right/0.23.1280.716@0.23.1280.716" timestamp="1587720658392" />
+    <state width="1218" height="166" key="GridCell.Tab.0.right/0.23.1280.721@0.23.1280.721" timestamp="1587564139498" />
+    <state width="1218" height="225" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1587565486735" />
     <state width="1920" height="350" key="GridCell.Tab.1.bottom" timestamp="1587068971676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -249,10 +307,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1920" height="350" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1587068971675" />
-    <state x="440" y="93" width="1268" height="853" key="SettingsEditor" timestamp="1585830192678">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="12" y="23" width="1268" height="715" key="SettingsEditor" timestamp="1587723693210">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
     <state x="440" y="93" width="1268" height="853" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080/3840.0.1920.1080@0.0.1920.1040" timestamp="1585830192678" />
+    <state x="12" y="23" width="1268" height="715" key="SettingsEditor/0.23.1280.715@0.23.1280.715" timestamp="1587723693210" />
+    <state x="256" y="23" key="SettingsEditor/0.23.1280.721@0.23.1280.721" timestamp="1587563542411" />
+    <state x="317" y="214" key="com.intellij.ide.util.TipDialog" timestamp="1587565686370">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="317" y="214" key="com.intellij.ide.util.TipDialog/0.23.1280.713@0.23.1280.713" timestamp="1587565686370" />
+    <state x="317" y="216" key="com.intellij.ide.util.TipDialog/0.23.1280.721@0.23.1280.721" timestamp="1587558798231" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587047021842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
