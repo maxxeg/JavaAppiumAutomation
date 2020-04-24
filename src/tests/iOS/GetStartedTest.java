@@ -1,9 +1,9 @@
 package tests.iOS;
-import lib.iOSTestCase;
+import lib.CoreTestCase;
 import lib.ui.WelcomePageObject;
 import org.junit.Test;
 
-public class GetStartedTest extends iOSTestCase
+public class GetStartedTest extends CoreTestCase
 {
     private WelcomePageObject WelcomePageObject;
 
