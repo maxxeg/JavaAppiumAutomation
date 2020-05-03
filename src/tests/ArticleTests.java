@@ -2,6 +2,8 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase
@@ -11,18 +13,10 @@ public class ArticleTests extends CoreTestCase
 
   @Test
   public void testCompareArticleTitle() {
-    SearchPageObject = new SearchPageObject(driver);
-    ArticlePageObject = new ArticlePageObject(driver);
+    SearchPageObject = SearchPageObjectFactory.get(driver);
+    ArticlePageObject = ArticlePageObjectFactory.get(driver);
 
     SearchPageObject.initSearchInput();
-    String placeholder = SearchPageObject.getSearchPlaceholder();
-
-    assertEquals(
-            "Not present search placeholder",
-            "Search…",
-            placeholder
-    );
-
     SearchPageObject.typeSearchLine("Java");
     SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
     String article_title = ArticlePageObject.getArticleTitle();
@@ -36,13 +30,13 @@ public class ArticleTests extends CoreTestCase
 
   @Test
   public void testSwipeArticle() {
-    SearchPageObject = new SearchPageObject(driver);
-    ArticlePageObject = new ArticlePageObject(driver);
+    SearchPageObject = SearchPageObjectFactory.get(driver);
+    ArticlePageObject = ArticlePageObjectFactory.get(driver);
 
     SearchPageObject.initSearchInput();
-    SearchPageObject.typeSearchLine("Appium");
-    SearchPageObject.waitForSearchResult("Appium");
-    SearchPageObject.clickByArticleWithSubstring("Appium");
+    SearchPageObject.typeSearchLine("Java");
+    SearchPageObject.waitForSearchResult("Java");
+    SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
     ArticlePageObject.waitForTitleElement();
     ArticlePageObject.swipeToFooter();
   }
