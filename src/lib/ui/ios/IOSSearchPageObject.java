@@ -15,6 +15,7 @@ public class IOSSearchPageObject extends SearchPageObject
         SEARCH_EMPTY_RESULT_ELEMENT = "id:No results found";
         SEARCH_RESULT_IN_TITLE_TPL = "xpath://XCUIElementTypeLink[contains(@name,'{TITLE}')]";
         SEARCH_RESULT_LOCATOR_IN_TITLE = "xpath://XCUIElementTypeLink";
+        SEARCH_RESULT_IN_TITLE_AND_DESCRIPTION_TPL = "xpath://XCUIElementTypeLink[@name='{TITLE}']";
     }
     public IOSSearchPageObject(AppiumDriver driver) {
         super(driver);

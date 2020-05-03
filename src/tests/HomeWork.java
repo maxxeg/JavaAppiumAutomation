@@ -152,11 +152,7 @@ public class HomeWork extends CoreTestCase
   }
 
   @Test
-  public void testTemplateRefactoring_Ex9() throws InterruptedException {
-    /*if (Platform.getInstance().isAndroid()) {
-      return;
-    }*/
-
+  public void testTemplateRefactoring_Ex9_Ex12() {
     SearchPageObject = SearchPageObjectFactory.get(driver);
 
     String search_word = "Languages of";
@@ -164,15 +160,27 @@ public class HomeWork extends CoreTestCase
     SearchPageObject.initSearchInput(); // кликаем на строку поиска
     SearchPageObject.typeSearchLine(search_word); // вводим поисковый запрос
 
-    String [][] titlesAndDescriptions = {
-            {"Languages of India", "Languages of a geographic region"},
-            {"Languages of the United States", "Languages of a geographic region"},
-            {"Languages of the Philippines", "Languages of a geographic region"}
-    };
-
-    // в цикле проверяем есть ли блок с таким названием и описанием, сравнивая со значениями из массива
-    for (int i = 0; i < 3; i ++) {
-      SearchPageObject.waitForElementByTitleAndDescription(titlesAndDescriptions[i][0], titlesAndDescriptions[i][1]);
+    if (Platform.getInstance().isAndroid()) {
+      String[][] titlesAndDescriptions = {
+              {"Languages of India", "Languages of a geographic region"},
+              {"Languages of the United States", "Languages of a geographic region"},
+              {"Languages of the Philippines", "Languages of a geographic region"}
+      };
+      // в цикле проверяем есть ли блок с таким названием и описанием, сравнивая со значениями из массива
+      for (int i = 0; i < 3; i ++) {
+        SearchPageObject.waitForElementByTitleAndDescription(titlesAndDescriptions[i][0], titlesAndDescriptions[i][1]);
+      }
+    } else {
+      String [][] titles = {
+              {"Languages of India\nLanguages of a geographic region"},
+              {"Languages of the United States\nLanguages of a geographic region"},
+              {"Languages of the Philippines\nLanguages of a geographic region"}
+      };
+      // в цикле проверяем есть ли блок с таким названием и описанием, сравнивая со значениями из массива
+      for (int i = 0; i < 3; i ++) {
+        SearchPageObject.waitForElementByTitle(titles[i][0]);
+        System.out.println(titles[i][0]);
+      }
     }
   }
 }
